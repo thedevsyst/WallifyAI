@@ -1,0 +1,18 @@
+# Virtual environment
+.venv/
+
+# Build artifacts
+build/
+dist/
+
+# Bytecode
+__pycache__/
+*.py[cod]
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
