@@ -5,7 +5,7 @@ a = Analysis(
     ['WallifyAI.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('WallifyAI-logo.ico', '.')],  # Include the icon file
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -35,4 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon='WallifyAI-logo.ico',  # Specify the icon file
 )

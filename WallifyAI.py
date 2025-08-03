@@ -77,7 +77,20 @@ class DevsystBackgroundSetter:
 
         # Attempt to set the application icon
         try:
-            self.master.iconbitmap("WallifyAI-logo.ico")
+            # Get the correct path for the icon file (works for both script and executable)
+            if hasattr(sys, '_MEIPASS'):
+                # Running as PyInstaller executable
+                icon_path = os.path.join(sys._MEIPASS, "WallifyAI-logo.ico")
+            else:
+                # Running as script
+                icon_path = "WallifyAI-logo.ico"
+            
+            # Check if icon file exists and set it
+            if os.path.exists(icon_path):
+                self.master.iconbitmap(icon_path)
+                print(f"Icon loaded successfully from: {icon_path}")
+            else:
+                print(f"Icon file not found at: {icon_path}")
         except tk.TclError as e:
             print(f"Error loading icon: {e}. Using default icon.")
 
@@ -452,7 +465,16 @@ class DevsystBackgroundSetter:
         
         # Set the icon for the about window
         try:
-            about_window.iconbitmap("WallifyAI-logo.ico")
+            # Get the correct path for the icon file (works for both script and executable)
+            if hasattr(sys, '_MEIPASS'):
+                # Running as PyInstaller executable
+                icon_path = os.path.join(sys._MEIPASS, "WallifyAI-logo.ico")
+            else:
+                # Running as script
+                icon_path = "WallifyAI-logo.ico"
+            
+            if os.path.exists(icon_path):
+                about_window.iconbitmap(icon_path)
         except tk.TclError:
             pass
         
@@ -750,7 +772,16 @@ class DevsystBackgroundSetter:
 
         # Set the icon for the interval window
         try:
-            interval_window.iconbitmap("WallifyAI-logo.ico")
+            # Get the correct path for the icon file (works for both script and executable)
+            if hasattr(sys, '_MEIPASS'):
+                # Running as PyInstaller executable
+                icon_path = os.path.join(sys._MEIPASS, "WallifyAI-logo.ico")
+            else:
+                # Running as script
+                icon_path = "WallifyAI-logo.ico"
+            
+            if os.path.exists(icon_path):
+                interval_window.iconbitmap(icon_path)
         except tk.TclError as e:
             print(f"Error setting icon for interval window: {e}")
 
