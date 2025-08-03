@@ -72,12 +72,12 @@ To build the application into a standalone executable:
 
 2. Run the following command:
    ```bash
-   pyinstaller --onefile --windowed WallifyAI.py
+   pyinstaller WallifyAI.spec
    ```
 
    Alternatively, if using a virtual environment:
    ```bash
-   .venv\Scripts\activate && pyinstaller --onefile --windowed WallifyAI.py
+   .venv\Scripts\activate && pyinstaller WallifyAI.spec
    ```
 
 ---
