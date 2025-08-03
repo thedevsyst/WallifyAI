@@ -3,7 +3,7 @@
 
 # Build artifacts
 build/
-dist/
+#dist/
 
 # Bytecode
 __pycache__/
